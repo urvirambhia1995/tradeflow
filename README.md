@@ -1,16 +1,65 @@
-# tradingapp
+# TradeFlow
 
-A new Flutter project.
+TradeFlow is a Flutter-based stock trading simulation app designed to demonstrate a modern trading application workflow with real-time simulated market price updates, watchlist management, holdings, and buy/sell order execution.
 
-## Getting Started
+## 📱 Screenshots
 
-This project is a starting point for a Flutter application.
+| Market                                         | Watchlist |
+|------------------------------------------------|-----------|
+| ![Market](assets/appsscreens/marketscreen.png) | ![Watchlist](assets/appsscreens/watchlistscreen.png) |
 
-A few resources to get you started if this is your first Flutter project:
+| Holdings                                          | Order                                        |
+|---------------------------------------------------|----------------------------------------------|
+| ![Holdings](assets/appsscreens/holdingscreen.png) | ![Order](assets/appsscreens/orderscreen.png) |
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## ✨ Features
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- User authentication screens
+- Stock market listing
+- Real-time simulated stock price updates
+- Price change flash animation
+- Watchlist management
+- Holdings and portfolio summary
+- Buy and sell order flow
+- Wallet balance management
+- Order validation
+- Local data persistence
+- Responsive Flutter UI
+
+## 📈 Market Simulation
+
+TradeFlow uses a mock market data source to simulate live stock price movements.
+
+- Stock prices update periodically
+- Price changes are streamed through the application
+- UI reacts to price updates using BLoC/Cubit
+- Visual flash indicators highlight price changes
+
+> This is a simulation project and does not connect to a real stock exchange or brokerage API.
+
+## 🏗️ Architecture
+
+The project follows a feature-based structure with separation between presentation, domain, and data layers.
+
+```text
+lib/
+├── core/
+│   └── constants/
+│
+├── data/
+│   ├── datasources/
+│   └── repositories/
+│
+├── domain/
+│   ├── entities/
+│   └── repositories/
+│
+├── features/
+│   ├── authentication/
+│   ├── holdings/
+│   ├── home/
+│   ├── market/
+│   ├── trading/
+│   └── watchlist/
+│
+└── injection/
